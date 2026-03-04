@@ -1,18 +1,17 @@
 from os import getenv
 import asyncio
 from dotenv import load_dotenv
-from aiogram import Bot, Dispatcher, Router
+from aiogram import Bot, Dispatcher
+from handlers.routes import router
 
 load_dotenv()
 
 TOKEN = getenv("BOT_TOKEN")
 
 dp = Dispatcher()
-router = Router()
+
 dp.include_router(router)
-@router.message()
-async def hello(message):
-    await message.answer(f"Hello {message.from_user.first_name}")
+
 
 
 

@@ -2,6 +2,7 @@ from os import getenv
 import asyncio
 from dotenv import load_dotenv
 from aiogram import Bot, Dispatcher
+
 from handlers.routes import router
 
 load_dotenv()
